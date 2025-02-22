@@ -203,6 +203,7 @@ body{
     text-align: center;
 }
 .my-products .container{
+    margin-bottom:5em;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -215,7 +216,6 @@ body{
     display: flex;
     justify-content: space-around;
     background-color: transparent;
-    margin-bottom:5em;
 
 }
 .my-products .container > div > .product{

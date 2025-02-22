@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./inc/style.css">
+    <link rel="shortcut icon" href="./img/data-analysis-svgrepo-com.svg" type="image/x-icon">
+    <title>Tinubz | Bet Now</title>
+</head>
+<body>
+    <div id="dialogBox" class="dialog-box">
+        <img src="./img/info-circle-svgrepo-com.svg" alt="message">
+        <p id="dialogMessage"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+    <section class="bet-side">
+        <h2>Select a betting company</h2>
+        <div class="container">
+            <div class="product" onclick="showError('Kindly add funds to your account first.')">
+                <img src="./img/OIP.jpg" alt="SportyBet">
+                <p>SportyBet</p>
+            </div>
+            <div class="product" onclick="showError('Kindly add funds to your account first.')">
+                <img src="./img/bet9ja.jpg" alt="Bet9ja">
+                <p>Bet9ja</p>
+            </div>
+            <div class="product" onclick="showError('Kindly add funds to your account first.')">
+                <img src="./img/easywin.jpg" alt="EasyWin">
+                <p>EasyWin</p>
+            </div>
+            <div class="product" onclick="showError('Kindly add funds to your account first.')">
+                <img src="./img/1xbet-aviator.png" alt="1xBet">
+                <p>1xBet</p>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-item" onclick="location.href='./index.html'">
+                <img src="./img/home-1-svgrepo-com.svg" alt="Home">
+                <a>Home</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./referral.html'">
+                <img src="./img/person-svgrepo-com.svg" alt="referral">
+                <a>Referral</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./contact.html'">
+                <img src="./img/contact-us-filled-svgrepo-com.svg" alt="contact">
+                <a>Contact</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./terms.html'">
+                <img src="./img/legal-hammer-symbol-svgrepo-com.svg" alt="terms">
+                <a>Terms</a>
+            </div>
+        </div>
+    </section>
+    <script src="./inc/script.js"></script>
+</body>
+</html>

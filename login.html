@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./inc/style.css">
+    <link rel="shortcut icon" href="./img/data-analysis-svgrepo-com.svg" type="image/x-icon">
+    <title>Tinubz | Login</title>
+</head>
+<body>
+    <div id="dialogBox" class="dialog-box">
+        <img src="./img/info-circle-svgrepo-com.svg" alt="message">
+        <p id="dialogMessage"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+    <section class="register">
+        <form class="container reg">
+            <div>
+                <img src="./img/link-two-svgrepo-com.svg" alt="logo">
+                <p>Tinubz</p>
+            </div>
+            <input type="tel" id="number" placeholder="Enter your Phone Number">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button type="submit" id="signin">Sign In</button>
+        </form>
+        <div class="login-side">
+            <code><a href="./register.html">Dont have an account?</a></code>
+            <button type="submit" class="red" onclick="location.href='./register.html'">Register</button>
+        </div>
+    </section>
+    <script>
+        function showError(message) {
+    const dialogBox = document.getElementById('dialogBox');
+    const dialogMessage = document.getElementById('dialogMessage');
+    dialogMessage.textContent = message;
+    dialogBox.classList.add('visible');
+}
+
+function closeDialog() {
+    const dialogBox = document.getElementById('dialogBox');
+    dialogBox.classList.remove('visible');
+}
+        let form = document.querySelector('.reg');
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault();
+            let phone = document.getElementById('number').value;
+            let pass = document.getElementById('password').value;
+
+            let phoneNow = localStorage.getItem('number');
+            let passNow = localStorage.getItem('password');
+                
+            let butt = document.getElementById('signin');
+
+            if (phone === phoneNow && pass === passNow) {
+                 console.log("passed");
+                 window.location.href='./index.html';
+            }
+            else if (phone != phoneNow || pass != passNow) {
+                    butt.setAttribute("onclick","showError('Incorrect user Logins!')");
+            }
+        })
+    </script>
+</body>
+</html>

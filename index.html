@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./inc/style.css">
+    <link rel="shortcut icon" href="./img/data-analysis-svgrepo-com.svg" type="image/x-icon">
+    <title>Tinubz | Home</title>
+</head>
+<body>
+    <div id="dialogBox" class="dialog-box">
+        <img src="./img/info-circle-svgrepo-com.svg" alt="message">
+        <p id="dialogMessage"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./img/person-svgrepo-com.svg" alt="person">
+                <p class="name"></p>
+            </div>
+            <div>
+                <button><img src="./img/contact-headset-communication-svgrepo-com.svg" alt="contact" onclick="location.href='./contact.html'"></button>
+                <button onclick="showError('You have no new notifications yet!')"><img src="./img/info-circle-svgrepo-com.svg" alt="notification"></button>
+            </div>
+        </div>
+    </header>
+    <section class="showcase">
+        <div class="container">
+            <div>
+                <p>Wallet Balance</p>
+                <p>&#8358;0.00</p>
+            </div>
+            <div>
+                <a class="history" onclick="showError('You have not made any transaction yet!')">History</a>
+                <button class="white" onclick="location.href='./fund.html'">Fund wallet</button>
+            </div>
+        </div>
+    </section>
+    <section class="products">
+        <div class="container">
+            <div>
+                <div class="product" onclick="location.href='./data.html'">
+                    <img src="./img/wifi-svgrepo-com.svg" alt="wifi">
+                    <p>Buy Data</p>
+                </div>
+                <div class="product" onclick="location.href='./airtime.html'">
+                    <img src="./img/call-medicine-rounded-svgrepo-com.svg" alt="airtime">
+                    <p>Buy Airtime</p>
+                </div>
+                <div class="product" onclick="location.href='./contact.html'">
+                    <img src="./img/contact-headset-communication-svgrepo-com.svg" alt="contact">
+                    <p>Contact</p>
+                </div>
+            </div>
+            <div>
+                <div class="product" onclick="location.href='./bet.html'">
+                    <img src="./img/bet-casino-chip-svgrepo-com.svg" alt="Betting">
+                    <p>Betting</p>
+                </div>
+                <div class="product" onclick="location.href='./loan.html'">
+                    <img src="./img/loan-interest-time-value-of-money-effective-svgrepo-com.svg" alt="loan">
+                    <p>Loan</p>
+                </div>
+                <div class="product" onclick="location.href='./referral.html'">
+                    <img src="./img/person-svgrepo-com.svg" alt="invite">
+                    <p>Invite</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-item" onclick="location.href='./index.html'">
+                <img src="./img/home-1-svgrepo-com.svg" alt="Home">
+                <a class="active">Home</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./referral.html'">
+                <img src="./img/person-svgrepo-com.svg" alt="referral">
+                <a>Referral</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./contact.html'">
+                <img src="./img/contact-us-filled-svgrepo-com.svg" alt="contact">
+                <a>Contact</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./terms.html'">
+                <img src="./img/legal-hammer-symbol-svgrepo-com.svg" alt="terms">
+                <a>Terms</a>
+            </div>
+        </div>
+    </section>
+    <script src="./inc/script.js"></script>
+    <script>
+        let fname = localStorage.getItem('firstname');
+        
+        let name = document.querySelector('.name');
+        name.innerHTML = "Hi, "+ fname;
+    </script>
+</body>
+</html>

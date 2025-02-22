@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./inc/style.css">
+    <link rel="shortcut icon" href="./img/data-analysis-svgrepo-com.svg" type="image/x-icon">
+    <title>Tinubz | Buy Airtime</title>
+</head>
+
+<body>
+    <div id="dialogBox" class="dialog-box">
+        <img src="./img/info-circle-svgrepo-com.svg" alt="message">
+        <p id="dialogMessage"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+    <header class="header">
+        <div class="container">
+            <p><b>></b> Buy Airtime</p>
+            <a class="history green" onclick="showError('You have not made any transaction yet!')">History</a>
+        </div>
+    </header>
+    <section class="showcase">
+        <div class="container">
+            <div>
+                <p class="black">Invest with zero risk</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat velit autem sed deserunt
+                    necessitatibus sapiente nihil voluptate consectetur neque pariatur!</p>
+                <p class="red">Click here to learn more</p>
+            </div>
+        </div>
+    </section>
+    <section class="user-side">
+        <div class="container">
+            <input type="checkbox" id="check">
+            <input type="number" id="number">
+            <img src="./img/person-svgrepo-com.svg" alt="user">
+        </div>
+    </section>
+    <section class="my-products">
+        <h4>Top Up</h4>
+        <div class="container">
+            <div>
+                <div class="product" onclick="location.href='./fund.html'">
+                    <p>&#8358;600 Airtime</p>
+                    <p class="green">Pay &#8358;500</p>
+                </div>
+                <div class="product" onclick="location.href='./fund.html'">
+                    <p>&#8358;1,200 Airtime</p>
+                    <p class="green">Pay &#8358;1,000</p>
+                </div>
+                <div class="product" onclick="location.href='./fund.html'">
+                    <p>&#8358;2,500 Airtime</p>
+                    <p class="green">Pay &#8358;2,000</p>
+                </div>
+            </div>
+            <div>
+                <div class="product" onclick="location.href='./fund.html'">
+                    <p>&#8358;6,000 Airtime</p>
+                    <p class="green">Pay &#8358;5,000</p>
+                </div>
+                <div class="product" onclick="location.href='./fund.html'">
+                    <p>&#8358;12,000 Airtime</p>
+                    <p class="green">Pay &#8358;10,000</p>
+                </div>
+                <div class="product" onclick="location.href='./fund.html'">
+                    <p>&#8358;25,000 Airtime</p>
+                    <p class="green">Pay &#8358;20,000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-item" onclick="location.href='./index.html'">
+                <img src="./img/home-1-svgrepo-com.svg" alt="Home">
+                <a>Home</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./referral.html'">
+                <img src="./img/person-svgrepo-com.svg" alt="referral">
+                <a>Referral</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./contact.html'">
+                <img src="./img/contact-us-filled-svgrepo-com.svg" alt="contact">
+                <a>Contact</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./terms.html'">
+                <img src="./img/legal-hammer-symbol-svgrepo-com.svg" alt="terms">
+                <a>Terms</a>
+            </div>
+        </div>
+    </section>
+    <script src="./inc/script.js"></script> 
+    <script>
+        let phone = localStorage.getItem('number');
+        let number = document.getElementById('number');
+        number.value = phone;
+    </script>
+</body>
+
+</html>

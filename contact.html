@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./inc/style.css">
+    <link rel="shortcut icon" href="./img/data-analysis-svgrepo-com.svg" type="image/x-icon">
+    <title>Tinubz | Chat With Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-head{
+            display: flex;
+            align-items: center;
+            gap: .5em;
+            border-bottom: 1px solid var(--blue);
+            background-color: var(--black);
+            color: var(--white);
+        }
+        .chat-head img{
+            width: 40px;
+            height: 40px;
+        }
+        .chat-head p{
+            font-size: 1.2em;
+        }
+        .chat-container {
+            width: 80%;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .message {
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 10px;
+            max-width: 80%;
+            display: block;
+        }
+        .user {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .bot {
+            background: #e0e0e0;
+            color: black;
+        }
+        .input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background: white;
+        }
+        input {
+            flex:1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-head">
+            <img src="./img/chat-round-dots-svgrepo-com.svg" alt="chat">
+            <p>Chat with Tinubz</p>
+        </div>
+        <div class="chat-box" id="chatBox"></div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-item" onclick="location.href='./index.html'">
+                <img src="./img/home-1-svgrepo-com.svg" alt="Home">
+                <a>Home</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./referral.html'">
+                <img src="./img/person-svgrepo-com.svg" alt="referral">
+                <a>Referral</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./contact.html'">
+                <img src="./img/contact-us-filled-svgrepo-com.svg" alt="contact">
+                <a class="active">Contact</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./terms.html'">
+                <img src="./img/legal-hammer-symbol-svgrepo-com.svg" alt="terms">
+                <a>Terms</a>
+            </div>
+        </div>
+    </section>
+    <script src="./inc/script.js"></script>
+    <script>
+        let fname = localStorage.getItem('firstname');
+        const botResponses = {
+            "help": "You can say things like : hello, hi, how are you, what's your name, bye",
+            "hello": "Hi there! How can I help you?",
+            "hi":"Hello, "+ fname,
+            "how are you?": "I'm just a bot, but I'm doing great!",
+            "what's your name?": "I'm your friendly chatbot!",
+            "whats your name?": "I'm your friendly chatbot!",
+            "what's your name": "I'm your friendly chatbot!",
+            "whats your name": "I'm your friendly chatbot!",
+            "bye": "Goodbye! Have a great day!"
+        };
+    
+        function sendMessage() {
+            const inputField = document.getElementById("userInput");
+            const userMessage = inputField.value.trim().toLowerCase();
+            
+            if (userMessage === "") return;
+    
+            appendMessage("user", userMessage);
+    
+            setTimeout(() => {
+                const botReply = botResponses[userMessage] || "Kindly wait for our support team to attend to you.";
+                appendMessage("bot", botReply);
+            }, 500);
+    
+            inputField.value = "";
+        }
+    
+        function appendMessage(sender, text) {
+            const chatBox = document.getElementById("chatBox");
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", sender);
+            messageDiv.textContent = text;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+    </script>
+    
+    </body>
+    </html>
+  

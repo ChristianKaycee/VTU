@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./inc/style.css">
+    <link rel="shortcut icon" href="./img/data-analysis-svgrepo-com.svg" type="image/x-icon">
+    <title>Tinubz | Terms</title>
+</head>
+
+<body>
+    <div id="dialogBox" class="dialog-box">
+        <img src="./img/info-circle-svgrepo-com.svg" alt="message">
+        <p id="dialogMessage"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="./img/person-svgrepo-com.svg" alt="person">
+                <p class="name"></p>
+            </div>
+            <div>
+                <button><img src="./img/contact-headset-communication-svgrepo-com.svg" alt="contact"></button>
+                <img src="./img/info-circle-svgrepo-com.svg" alt="notification">
+            </div>
+        </div>
+    </header>
+    <section class="terms">
+        <div class="container">
+        <h1>Tinubz Terms of Service</h1>
+        <ul>
+            <li class="list-head">1. Introduction</li>
+            <li>
+                Welcome to Tinubz... By using our website and services, you agree to comply with these Terms of Service.
+                If
+                you do not agree, please do not use our services.
+            </li>
+        <li class="list-head">2. Eligibility</li>
+            <li>
+                You must be at least 18 years old or have parental consent to use our services. By using our platform,
+                you
+                confirm that you meet this requirement.
+            </li>
+        <li class="list-head">3. Services Provided</li>
+            <li>
+                We offer data bundle purchases and related services. All transactions are subject to availability and
+                network provider terms.
+            </li>
+        <li class="list-head">4. Account Registration</li>
+            <li>
+                To access all features, you need to create an account. You are responsible for maintaining the security
+                of
+                your account and all activities under it.
+            </li>
+        <li class="list-head">5. Payments and Refunds</li>
+            <li>
+                Payments must be made using the Bank Account provided on our platform.
+            </li>
+            <li>
+                All purchases are final. Money is not refundable under any circumstances.
+            </li>
+            <li>
+                Any issues must be reported within 48 hours of the transaction.
+            </li>
+        <li class="list-head">6.Service Delivery</li>
+            <li>
+                Users must invite at least 11 people before receiving the service they purchased. If a user purchases a
+                service without meeting this requirement, the service will remain pending until the terms are met.
+            </li>
+            <li>
+                We strive to deliver our service promptly. However, delays may occur due to network provider issues. If
+                you
+                experience delays, please contact our support team.
+            </li>
+        <li class="list-head">7. Referral Program and Withdrawals</li>
+            <li>
+                The minimum withdrawal amount for referral rewards is N5,000.
+            </li>
+            <li>You cannot withdraw referral earnings unless you have bought data from us.</li>
+            <li>You are not allowed to use one device to register multiple accounts for the purpose of earning referral
+                rewards. Any violation may result in account suspension.</li>
+        
+        <li class="list-head">8. User Responsibilities</li>
+            <li>
+                You agree to use our services only for lawful purposes.
+            </li>
+           <li> You will not attempt to manipulate or exploit our platform for fraudulent activities.</li>
+        <li class="list-head">9. Liability Limitation</li>
+            <li>
+                We are not responsible for any losses, damages, or service interruptions caused by factors beyond our
+                control, including but not limited to network provider failures.
+            </li>
+        <li class="list-head">10. Privacy Policy</li>
+            <li>
+                Your use of our services is also governed by our Privacy Policy, which details how we collect, use, and
+                protect your information.
+            </li>
+        
+        <li class="list-head">11. Changes to Terms</li>
+            <li>
+                We may update these Terms of Service at any time. Continued use of our services after changes take
+                effect
+                constitutes acceptance of the new terms. <section class="footer">
+            </li>
+        </ul>
+    </div>
+    </section>
+    <div class="clear"></div>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-item" onclick="location.href='./index.html'">
+                <img src="./img/home-1-svgrepo-com.svg" alt="Home">
+                <a>Home</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./referral.html'">
+                <img src="./img/person-svgrepo-com.svg" alt="referral">
+                <a>Referral</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./contact.html'">
+                <img src="./img/contact-us-filled-svgrepo-com.svg" alt="contact">
+                <a>Contact</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./terms.html'">
+                <img src="./img/legal-hammer-symbol-svgrepo-com.svg" alt="terms">
+                <a class="active">Terms</a>
+            </div>
+        </div>
+    </section>
+    <script src="./inc/script.js"></script>
+    <script>
+        let fname = localStorage.getItem('firstname');
+        let name = document.querySelector('.name');
+        name.innerHTML = "Hi, "+ fname;
+    </script>
+</body>
+
+</html>

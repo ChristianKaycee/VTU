@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./inc/style.css">
+    <link rel="shortcut icon" href="./img/data-analysis-svgrepo-com.svg" type="image/x-icon">
+    <title>Tinubz | Invite to Earn</title>
+</head>
+<style>
+</style>
+<body>
+    <div id="dialogBox" class="dialog-box">
+        <img src="./img/info-circle-svgrepo-com.svg" alt="message">
+        <p id="dialogMessage"></p>
+        <button onclick="closeDialog()">Close</button>
+    </div>
+    <section class="com-side">
+        <div class="container">
+            <div class="borrow">
+                <div>
+                    <p>Referral Commision</p>
+                    <div class="com">500</div>
+                </div>
+                <div>
+                    <p>Your Referrals</p>
+                    <div>
+                        <img src="./img/person-svgrepo-com.svg" alt="person">
+                        <p><span id="share-count">0</span> Person(s)</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="blue" onclick="showError('Minimum withdrawal is &#8358;5,000.00')">Withdraw</button>
+            </div>
+        </div>
+    </section>
+    <section class="link-side">
+        <div class="container">
+            <p>Your Referral Link</p>
+            <div>
+                <input type="text" class="name">
+                <button class="blue" id="copy-btn">Copy</button>
+
+    <code id="message" class="red"></code>
+            </div>
+        </div>
+    </section>
+
+        <section class="link-showcase">
+            <div class="container">
+                <div>
+                    <p>Copy your link and</p>
+                    <h2><b>Invite Your Friends</b></h2>
+                    <p>For everybody that registers through your link, you'll earn &#8358;100</p>
+                </div>
+                <br>
+                <h4><b>Or</b></h4>
+                <button class="green" id="whatsapp-share">Invite Via WhatsApp</button>
+            </div>
+        </section>
+    <section class="footer">
+        <div class="container">
+            <div class="footer-item" onclick="location.href='./index.html'">
+                <img src="./img/home-1-svgrepo-com.svg" alt="Home">
+                <a>Home</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./referral.html'">
+                <img src="./img/person-svgrepo-com.svg" alt="referral">
+                <a class="active">Referral</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./contact.html'">
+                <img src="./img/contact-us-filled-svgrepo-com.svg" alt="contact">
+                <a>Contact</a>
+            </div>
+            <div class="footer-item" onclick="location.href='./terms.html'">
+                <img src="./img/legal-hammer-symbol-svgrepo-com.svg" alt="terms">
+                <a>Terms</a>
+            </div>
+        </div>
+    </section>
+    <script src="./inc/script.js"></script>
+    <script>
+        let num = localStorage.getItem('number');
+        let name = document.querySelector('.name');
+        name.value = "https://tinubz.com?"+ num;
+        document.getElementById("copy-btn").addEventListener("click", function () {
+            navigator.clipboard.writeText(name.value).then(() => {
+                document.getElementById("message").textContent = "Text copied!";
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+        });
+        let shareCount = 0; // Initial count
+        let commision = document.querySelector('.com');
+
+        document.getElementById("whatsapp-share").addEventListener("click", function () {
+            let text = name.value;
+            let url = window.location.href;
+            let whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`;
+            
+            window.open(whatsappUrl, "_blank"); // Open WhatsApp
+
+            // Increase count after 5 seconds
+            setTimeout(() => {
+                shareCount++;
+                document.getElementById("share-count").textContent = shareCount;
+                commision.innerHTML= Number(commision.textContent) + 100;
+            }, 5000);
+        });
+        
+    </script>
+</body>
+
+</html>

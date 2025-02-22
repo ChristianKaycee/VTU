@@ -97,8 +97,7 @@
 
         document.getElementById("whatsapp-share").addEventListener("click", function () {
             let text = name.value;
-            let url = window.location.href;
-            let whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`;
+            let whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
             
             window.open(whatsappUrl, "_blank"); // Open WhatsApp
 

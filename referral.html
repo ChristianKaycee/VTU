@@ -84,7 +84,7 @@
     <script>
         let num = localStorage.getItem('number');
         let name = document.querySelector('.name');
-        name.value = "https://tinubz.com?"+ num;
+        name.value = "https://vtu-gamma.vercel.app?"+ num;
         document.getElementById("copy-btn").addEventListener("click", function () {
             navigator.clipboard.writeText(name.value).then(() => {
                 document.getElementById("message").textContent = "Text copied!";
